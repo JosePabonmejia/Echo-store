@@ -145,3 +145,62 @@ El scope dentro de Sass hace referencia al contexto en el que son declaradas las
 * ***@include:*** nos ayuda a invocar los mixins.
 * ***@error, @warn @debug:*** sirver para cuando hay un error, una advertencia o se quiere debugear, respectivamente
 * ***@for, @if, @each, @while:*** tienen que ver con estructuras de control, se pueden usar dentro de una función
+
+## Expresiones: Literales y Operaciones
+
+Una expresión es todo aquello que va del lado derecho de una variable, admitiendo varios tipos de valores.
+Las expresiones son mucho más poderosas que los valores CSS simples, ya que se pasan como argumentos a mixins y funciones.
+
+Expresiones literales
+
+* Números
+
+        /* Números */
+        div {
+        width: 200px; /* Valor numérico */
+        opacity: 0.8; /* Valor numérico */
+        font-size: 18px; /* Valor numérico */
+        }
+* Strings
+
+        /* Strings */
+        h1 {
+        content: "Hola"; /* Valor de cadena */
+        font-family: "Arial", sans-serif; /* Valor de cadena */
+        }
+* Colores
+
+        /* Colores */
+        p {
+        color: red; /* Valor de color */
+        background-color: #00ff00; /* Valor de color en formato hexadecimal */
+        border: 1px solid rgb(255, 0, 0); /* Valor de color en formato de función RGB */
+        }
+* Booleanos
+
+        /* Booleanos */
+        span {
+        display: none; /* Valor booleano (false) */
+        visibility: visible; /* Valor booleano (true) */
+        }
+* Null
+
+            /* Null */
+            section {
+                --mi-variable: null; /* Valor null */
+            }
+* Listas
+
+        /* Listas */
+        ul {
+        list-style: square inside; /* Valor de lista */
+        margin: 10px 20px 30px; /* Valor de lista */
+        }
+* Mapas
+
+        /* Mapas */
+        body {
+        --mi-mapa: (primary-color: blue, secondary-color: red); /* Valor de mapa */
+        color: var(--mi-mapa, primary-color); /* Uso de mapa en una propiedad */
+        }  
+

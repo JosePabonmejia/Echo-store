@@ -29,9 +29,9 @@ nav .icons {
   height: 100%;
   display: flex;
   align-items: center;
+  gap: 48px;
 }
 nav .icons button {
-  margin-left: 48px;
   background: none;
   border: none;
 }
