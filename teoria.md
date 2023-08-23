@@ -204,3 +204,88 @@ Expresiones literales
         color: var(--mi-mapa, primary-color); /* Uso de mapa en una propiedad */
         }  
 
+## Inheritance Sass
+El concepto de la herencia en Sass, es un concepto bastante sencillo, pero muy poderoso, que si lo sabes aplicar va a acelerar y optimizar tu desarrollo.
+
+Muchas veces al estar creando nuestros estilos podemos caer en la repetición de código, esto conlleva a dos problemas, Primero se comienza a extender bastante la hoja de estilos y se vuelve difícil de mantener a lo largo del tiempo, el otro problema que puede surgir es el desorden, entonces, si queremos arreglar o cambiar alguna parte de nuestro código va a ser más difícil hacerlo.
+
+Por suerte tenemos a nuestro buen amigo SASS, piénsalo así, muchas veces usamos patrones de diseño, responsive es patrones, nos dan ciertas guías o convenciones para saber como organizar CSS, el más usado es BEM.
+
+BEM nos propone crear estilos generales con una clase y luego modificar esa clase según nos convenga, por ejemplo:
+
+        <div class="error error--serious">
+        Oh no! You've been hacked!
+        </div>
+
+En este ejemplo tenemos un div con dos clases “error” y “error–serious”, una buena opción para estilizar este div, suponiendo que los necesitáramos reutilizar más adelante, sería de la siguiente forma:
+
+* Estilizamos la clase general con los estilos básicos que se repetirán a lo largo de los div
+* Luego estilizamos el div en específico que tendrá otros estilos     adicionales
+
+        .error {
+        border: 1px #f00;
+        background-color: #fdd;
+        }
+
+        .error--serious {
+        border-width: 3px;
+        }
+
+Pero esto se puede simplificar a un más usando la herencia con SASS
+
+        .error {
+        border: 1px #f00;
+        background-color: #fdd;
+
+        &--serious {
+            @extend .error;
+            border-width: 3px;
+        }
+        }
+
+De esta manera no solo estamos organizando el código y evitando reutilizar código, si no además se puede entender de una mejor forma de donde viene los estilos heredados y a que clase hacen referencia
+
+## Mixins 
+
+En Sass, un mixin es un grupo de declaraciones de CSS que pueden reutilizarse a través de la hoja de estilo. 
+Los mixins funcionan como una función en Sass y nos ayudan a reducir la escritura del mismo código una y otra vez. 
+Los mixins son una característica de Sass que permiten definir conjuntos de propiedades CSS que pueden ser reutilizados en varias partes del código.
+
+### Como crear un mixin?
+
+Los mixins son muy parecidos a las funciones con parametros ya que creamos primero las propiedades dentro del mixin las cuales necesitan de 
+valores para que se activen.
+
+Los mixins se deben crear debajo de las variables iniciales de un proyento.
+
+En este ejemplo podemos ver una funcion para resumir las propiedades de flexbox que utilizamos en todo el proyecto 
+
+    @mixin flex-center($direction,$content,$align,$gap){
+        display: flex;
+        flex-direction: $direction;
+        justify-content: $content;
+        align-items: $align;
+        gap: $gap;
+    }
+
+Para poder enviar los valores se utiliza la extencion:
+
+    @include flex-center(row,space-around ,none ,200px );    
+
+Los @mixin aceptan también parámetros opcionales:
+
+Simplemente, hay que asignarle el valor por defecto ( en mi caso null* )
+
+    @mixin flexCenter($direction, $content: null, $align: null){
+        display: flex;
+        flex-direction: $direction;
+        justify-content: $content;
+        align-items: $align;
+    }
+
+y luego pueden usar, sin especificar ese parámetro:
+
+    @include flexCenter(row, space-between, center);
+    @include flexCenter(column, space-around);
+    @include flexCenter(column);
+
