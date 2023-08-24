@@ -202,7 +202,10 @@ main .info-section section {
   width: 100%;
   height: auto;
 }
-main .about-us-container {
+main .info-section section h2 {
+  font-weight: 500;
+}
+main .info-section .about-us .about-us-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -211,14 +214,14 @@ main .about-us-container {
   padding: 7.5rem 5rem;
   gap: 200px;
 }
-main .about-us-container div {
+main .info-section .about-us .about-us-container div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: none;
   gap: none;
 }
-main .about-us-container p {
+main .info-section .about-us .about-us-container p {
   color: #E86424;
   font-size: 3rem;
   font-weight: 500;
@@ -227,9 +230,80 @@ main .about-us-container p {
   margin-left: 30px;
   text-align: center;
 }
+main .info-section .gallery .gallery-img-container {
+  width: 100%;
+  height: auto;
+  padding: 60px;
+  display: flex;
+  gap: 60px;
+}
+main .info-section .gallery .gallery-img-container .gallery-img {
+  background-image: url(../asets/img/gallery-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 45vh;
+  width: 30vw;
+  border-radius: 16px;
+}
+main .info-section .gallery .gallery-img-container .gallery-img:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+main .info-section .gallery .gallery-img-container .gallery-img.two {
+  background-image: url(../asets/img/gallery-2.jpg);
+}
+main .info-section .gallery .gallery-img-container .gallery-img.tree {
+  background-image: url(../asets/img/gallery-3.jpg);
+}
+main .info-section .location .map {
+  background-image: url(../asets/img/map.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 68vh;
+  width: 91vw;
+  border-radius: 7px;
+  margin: 70px 0px;
+}
+main .info-section .location h3 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 9.5rem;
+  color: #E86424;
+}
+main .info-section .location p {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: none;
+  color: #E86424;
+  padding-bottom: 60px;
+}
 
 footer {
   background-color: #fa9500;
   width: 100%;
-  height: 250px;
+  height: auto;
+  padding: 70px 60px 30px;
+}
+footer h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: none;
+  color: #FFEFE7;
+  padding-bottom: 50px;
+}
+footer p {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: none;
+  color: #FFEFE7;
+  padding-bottom: 20px;
+}
+footer .social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: none;
+  gap: 20px;
 }/*# sourceMappingURL=main.css.map */

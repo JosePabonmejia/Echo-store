@@ -228,37 +228,111 @@ main{
                 }
             }
         }
+        .info-section{
 
-        .info-section section {
-            padding: 65px;
-            width: 100%;
-            height: auto;
-        }
-        .about-us-container{
-            @include flex-center(row,space-around ,none ,200px );
-            padding: 7.5rem 5rem;
-            gap: 200px;
+            section {
+                padding: 65px;
+                width: 100%;
+                height: auto;
+            }
+            section h2{
+                font-weight: 500;
+                
+            }
+            .about-us {
 
-        }
-        .about-us-container div{
-            @include flex-center(row,center ,none ,none );
-        } 
+                    .about-us-container{
+                        @include flex-center(row,space-around ,none ,200px );
+                        padding: 7.5rem 5rem;
+                        gap: 200px;
         
-        .about-us-container p {
-            color:#E86424;
-            @include h1-p(3rem,500 ,3.9rem ,none );
-            margin-left: 30px;
-            text-align: center;
-        }
+                    }
+                    .about-us-container div{
+                        @include flex-center(row,center ,none ,none );
+                    } 
+                    
+                    .about-us-container p {
+                        color:#E86424;
+                        @include h1-p(3rem,500 ,3.9rem ,none );
+                        margin-left: 30px;
+                        text-align: center;
+                    }
+            }
+
+            .gallery {
+                .gallery-img-container{
+                    width: 100%;
+                    height: auto;
+                    padding: 60px;  
+                    display: flex;
+                    gap: 60px;
+                    .gallery-img{
+                        background-image: url(../asets/img/gallery-1.jpg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        height: 45vh;
+                        width: 30vw;
+                        border-radius: 16px;
+                        
+                        &:hover{
+                        transform: scale(1.1);
+                        transition-duration: 0.3s;
+                        }
+                    }
+                    .gallery-img.two{
+                        background-image: url(../asets/img/gallery-2.jpg);
+                    }
+                    .gallery-img.tree{
+                        background-image: url(../asets/img/gallery-3.jpg);
+                    }
+
+                }
+            }
+            .location{
+                
+                .map{
+                    background-image: url(../asets/img/map.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 68vh;
+                    width: 91vw;
+                    border-radius: 7px;
+                    margin: 70px 0px;
+                   
+                }
+                h3{
+                    @include h1-p(3.5rem,400 ,9.5rem ,#E86424 );
+                }
+                p{
+                    @include h1-p(2.5rem,400 ,none ,#E86424 );
+                    padding-bottom: 60px;
+                }
+               
+            }
+         }
 
 }
-
 
 
 footer{
     $background: #fa9500;
     background-color: $background;
     width: 100%;
-    height: 250px;
+    height: auto;
+    padding: 70px 60px 30px;
+    
+    h3{
+        @include h1-p(3rem,500,none,$primary-color );
+        padding-bottom: 50px;
+    }
+    p{
+        @include h1-p(2rem,500 ,none,$primary-color );
+        padding-bottom: 20px;
+    }
+    .social-media{
+        @include flex-center(row,center ,none ,20px );
+    }
 }
 

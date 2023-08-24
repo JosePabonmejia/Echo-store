@@ -289,3 +289,23 @@ y luego pueden usar, sin especificar ese parámetro:
     @include flexCenter(column, space-around);
     @include flexCenter(column);
 
+## Funciones 
+
+Al igual que los extends, las funciones en SASS intentan ser familiares con un lenguaje de programación, y son eso: mediante argumentos, traer un valor esperado.
+
+Las funciones pueden ser muy útiles ya que podemos esperar algun escenario en nuestro sitio y actuar, evitando hacer CSS para cada uno.
+
+Las funciones permiten definir las operaciones complejas en valores de Sass. Las funciones se definen usando la regla @function
+
+
+    @function pow ($base,$exponent){
+        $result: 1;
+        @for $_ from 1 through $exponent {
+            $result: $result * $base;
+        }
+        @result $result;
+    }
+    .sidebar {
+        float:left;
+        margin-left:pow(4,5)*1px;
+    }
